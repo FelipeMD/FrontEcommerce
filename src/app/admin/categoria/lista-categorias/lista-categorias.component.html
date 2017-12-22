@@ -1,0 +1,21 @@
+<div class="col-md-12">
+  <a routerLink="/admin/categoria/inserir" type="button" class="btn-lg glyphicon glyphicon-plus-sign  pull-right ">ADD</a><br><br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th title="Identificador da categoria.">#</th>
+        <th title="Nome da categoria.">Categoria</th>
+        <th title="Ações">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+       <tr *ngFor="let categoria of categorias">
+        <th scope="row">{{categoria.id}}</th>
+        <td>{{categoria.nome}}</td>
+        <td><button class="pull-right btn-md btn glyphicon glyphicon-remove" (click)="deletarCategoria(categoria.id)"></button>&nbsp;&nbsp;
+        <button class="pull-right btn-md btn glyphicon glyphicon-pencil" [routerLink]="['/admin/categoria/atualizar', categoria.id]"></button>
+        <button class="pull-right btn-md btn glyphicon glyphicon-eye-open" [routerLink]="['/admin/categoria/visualizar', categoria.id]" ></button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

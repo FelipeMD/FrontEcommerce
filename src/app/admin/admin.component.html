@@ -1,0 +1,75 @@
+
+<header id="header  "><!--header-->
+  <div class="header_top"><!--header_top-->
+
+
+
+
+  </div><!--/header-middle-->
+  <div class="header-bottom"><!--header-bottom-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+
+          <div class="row carrinho">
+            <div class="col-4">
+              <img src="../../assets/icons/cart-200.png"/>
+            </div>
+            <div class="col-8">
+                <h3>Meu Carrinho</h3>
+          
+                <div *ngIf="produtos" >
+                  <span>{{produto.length}} Produtos</span>
+                </div>
+          
+                <div *ngIf="!produtos" >
+                  <span>Carrinho Vazio</span>
+                </div>
+            </div>
+          </div>
+
+          
+
+          <!--dropd-->
+         <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Menu
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <button class="dropdown-item" type="button"><a href="index.html"  class="active"></a>Home</button>
+              <a onclick="$('.listagem').html('Listagem de Produtos')" style="cursor: pointer" [routerLink]="['/admin/produto']"><button class="dropdown-item" type="button">Produtos</button></a>
+              <a onclick="$('.listagem').html('Listagem de Categorias')" style="cursor: pointer" [routerLink]="['/admin/categoria']"><button class="dropdown-item" type="button">Categoria</button></a>
+            </div>
+          </div> 
+
+        </div>
+        <div class="col-md-3">
+        </div>
+      </div>
+    </div>
+  </div><!--/header-bottom-->
+</header><!--/header-->
+
+
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 padding-right">
+          <div class="features_items"><!--features_items-->
+            <router-outlet></router-outlet>
+          </div><!--features_items-->
+        </div>
+        </div>
+      </div>
+  </section>
+  <app-alerts></app-alerts>
+

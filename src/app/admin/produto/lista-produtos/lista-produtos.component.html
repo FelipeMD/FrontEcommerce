@@ -1,0 +1,38 @@
+
+<a routerLink="/admin/produto/inserir" type="button" class="btn glyphicon glyphicon-plus-sign pull-right">ADD</a><br><br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th title="Identificador da categoria.">#</th>
+        <th title="Nome da categoria.">Produto</th>
+        <th title="Nome da categoria.">Preço</th>
+        <th title="Nome da categoria.">Categoria</th>
+        <th title="Ações">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+     <tr *ngFor="let produto of produtos">
+        <th scope="row">{{produto.id}}</th>
+        <td>{{produto.nome}}</td>
+        <td>R$ {{produto.preco}}</td>
+        <td>{{produto.categoria.nome}}</td>
+        <td>
+          <button class="pull-right glyphicon glyphicon-remove" (click)="deletarProduto(produto.id, i)"></button>&nbsp;&nbsp;
+          <button class="pull-right glyphicon glyphicon-pencil" [routerLink]="['/admin/produto/atualizar', produto.id]"></button>
+          <button class="pull-right glyphicon glyphicon-eye-open" [routerLink]="['/admin/produto/visualizar', produto.id]"></button>
+
+      
+          <button (click)="adicionarProduto(produtos)" >Teste</button>
+      
+        </td>
+
+        
+        
+      </tr>
+
+
+    </tbody>
+
+  
+
+  </table>

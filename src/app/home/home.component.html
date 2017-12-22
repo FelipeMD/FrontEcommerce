@@ -1,0 +1,165 @@
+
+<header id="header  "><!--header-->
+  <div class="header_top"><!--header_top-->
+
+
+    <div class="row carrinho">
+      <div class="col-4">
+        <img src="../../assets/icons/cart-200.png"/>
+      </div>
+      <div class="col-8">
+          <h3>Meu Carrinho</h3>
+    
+          <div *ngIf="produtos" >
+            <span>{{produtos.length}} Produtos</span>
+          </div>
+    
+          <div *ngIf="!produtos" >
+            <span>Carrinho Vazio</span>
+          </div>
+    
+          
+          
+      </div>
+    </div>
+
+  </div><!--/header-middle-->
+  <div class="header-bottom"><!--header-bottom-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+
+
+          
+
+
+          <!--dropd-->
+         <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Menu
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <button class="dropdown-item" type="button"><a href="index.html"  class="active"></a>Home</button>
+              <a onclick="$('.listagem').html('Listagem de Produtos')" style="cursor: pointer" [routerLink]="['/admin/produto']"><button class="dropdown-item" type="button">Produtos</button></a>
+              <a onclick="$('.listagem').html('Listagem de Categorias')" style="cursor: pointer" [routerLink]="['/admin/categoria']"><button class="dropdown-item" type="button">Categoria</button></a>
+            </div>
+          </div> 
+
+        </div>
+        <div class="col-md-3">
+        </div>
+      </div>
+    </div>
+  </div><!--/header-bottom-->
+</header><!--/header-->
+
+
+  <!--listagem-->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="left-sidebar">
+            <h2>Categorias</h2>
+            <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+              <div *ngFor="let categoria of categorias" class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title"><a href="#">{{ categoria.nome }}</a></h4>
+                </div>
+              </div>
+            </div><!--/category-products-->
+          </div>
+        </div>
+        <div class="col-md-9 padding-right">
+          <div class="features_items"><!--features_items-->
+            <router-outlet></router-outlet>
+          </div><!--features_items-->
+        </div>
+      </div>
+    </div>
+
+
+    <!--footer-->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <footer>
+        <div class="footer" id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                        <h3> Lorem Ipsum </h3>
+                        <ul>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                        <h3> Lorem Ipsum </h3>
+                        <ul>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                        <h3> Lorem Ipsum </h3>
+                        <ul>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                        <h3> Lorem Ipsum </h3>
+                        <ul>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                            <li> <a href="#"> Lorem Ipsum </a> </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                        <h3> Lorem Ipsum </h3>
+                        <ul>
+                            <li>
+                                <div class="input-append newsletter-box text-center">
+                                    <input type="text" class="full text-center" placeholder="Email ">
+                                    <button class="btn  bg-gray" type="button"> Lorem ipsum <i class="fa fa-long-arrow-right"> </i> </button>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="social">
+                            <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
+                            <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
+                            <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
+                            <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
+                            <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--/.row--> 
+            </div>
+            <!--/.container--> 
+        </div>
+        <!--/.footer-->
+        
+       
+    </footer>  
+
+
+    
+
+
+  </section>
+
